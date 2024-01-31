@@ -1,0 +1,41 @@
+{% extends 'core/base.html'%}
+
+{% block title%} Profile {% endblock %}
+{% block content %}
+<div class="p-10 lg:p-20 text-center">
+    <h1 class="text-3xl lg:text-6xl text-white">Profile</h1>
+</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ user.username }}'s Profile</title>
+    </head>
+<body>
+
+    <div class="profile-bio">
+        <h2 class="text-2xl underline decoration-double pl-6 pb-3">Bio</h2>
+        <p class="border-radius: 0.125rem mx-9 border-4 p-4 rounded-lg bg-white shadow-lg h-80 ">{{ profile.bio }}</p>
+    </div>
+
+    {% if profile.website %}
+        <div class="profile-website">
+            <h2 class="text-2xl underline decoration-double pl-5 pb-3">Website</h2>
+            <a href="{{ profile.website }}" class="border-radius: 0.125rem mx-9 border-4 p-4 rounded-lg bg-white shadow-lg h-80 ">{{ profile.website }}</a>
+        </div>
+    {% endif %}
+
+        <div class="profile-skills">
+            <h2 class="text-2xl underline decoration-double pl-5 pb-3">Skills</h2>
+            <p class="border-radius: 0.125rem mx-9 border-4 p-4 rounded-lg bg-white shadow-lg h-80 ">{{ profile.skills }}</p>
+        </div>
+
+
+        <div class="profile-interests">
+            <h2 class="text-2xl underline decoration-double pl-5 pb-3">Interests</h2>
+            <p class="border-radius: 0.125rem mx-9 border-4 p-4 rounded-lg bg-white shadow-lg h-80 ">{{ profile.interests }}</p>
+        </div>
+
+    </body>
+</html>
+
+{% endblock %}
